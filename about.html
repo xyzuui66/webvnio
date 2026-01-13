@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Vnio Intelligence</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --bg: #000; --accent: #38bdf8; --border: rgba(255,255,255,0.08); }
+        body { margin: 0; background: var(--bg); color: #fff; font-family: 'SF Pro Display', sans-serif; }
+        
+        nav {
+            position: sticky; top: 0; padding: 20px 8%; display: flex;
+            justify-content: space-between; align-items: center;
+            background: rgba(0,0,0,0.7); backdrop-filter: blur(25px);
+            border-bottom: 1px solid var(--border); z-index: 1000;
+        }
+
+        .content-container { max-width: 1100px; margin: 0 auto; padding: 80px 20px; }
+        
+        .header-section { text-align: left; margin-bottom: 60px; }
+        .header-section h2 { font-size: 3.5rem; font-weight: 700; margin: 0; letter-spacing: -2px; }
+        
+        .tab-nav {
+            display: flex; gap: 30px; border-bottom: 1px solid var(--border);
+            margin-bottom: 50px; padding-bottom: 10px; overflow-x: auto;
+        }
+        .tab-btn {
+            background: none; border: none; color: #555; font-size: 16px;
+            font-weight: 600; cursor: pointer; transition: 0.3s; padding-bottom: 10px;
+            white-space: nowrap;
+        }
+        .tab-btn.active { color: var(--accent); border-bottom: 2px solid var(--accent); }
+
+        .info-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 50px; animation: fadeIn 0.6s ease; }
+        
+        .main-info h3 { font-size: 2rem; margin-top: 0; }
+        .main-info p { font-size: 1.15rem; color: #888; line-height: 1.8; }
+
+        .feature-card {
+            background: #0a0a0a; border: 1px solid var(--border);
+            padding: 30px; border-radius: 24px; transition: 0.3s;
+        }
+        .feature-card:hover { border-color: #333; }
+
+        .hidden { display: none; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        input, textarea {
+            width: 100%; padding: 18px; background: #0a0a0a; border: 1px solid var(--border);
+            border-radius: 12px; color: #fff; margin-bottom: 15px; font-family: inherit;
+        }
+        .btn-submit {
+            width: 100%; padding: 18px; border-radius: 12px; border: none;
+            background: #fff; color: #000; font-weight: 700; cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div style="font-weight:800; font-size:20px;">VNIO</div>
+        <a href="index.html" style="color:#fff; text-decoration:none; font-size:14px; opacity:0.6;">Close <i class="fas fa-times"></i></a>
+    </nav>
+
+    <div class="content-container">
+        <div class="header-section">
+            <h2>Intelligence Hub.</h2>
+            <p style="color:#555; font-size:1.2rem; margin-top:10px;">The documentation of our digital ecosystem.</p>
+        </div>
+
+        <div class="tab-nav">
+            <button class="tab-btn active" onclick="showTab('tab1', this)">OVERVIEW</button>
+            <button class="tab-btn" onclick="showTab('tab2', this)">SPECIFICATIONS</button>
+            <button class="tab-btn" onclick="showTab('tab3', this)">INTERFACE</button>
+            <button class="tab-btn" onclick="showTab('tab4', this)">CONTACT</button>
+        </div>
+
+        <div id="tab1" class="info-grid">
+            <div class="main-info">
+                <h3>Designed for Control.</h3>
+                <p>Vnioapp mendefinisikan ulang cara kita berinteraksi dengan data. Dibangun dengan fokus pada kecepatan dan skalabilitas, sistem ini memungkinkan manajemen aset digital yang kompleks menjadi sederhana.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-shield-halved" style="color:var(--accent); font-size:24px; margin-bottom:15px;"></i>
+                <h4>Enterprise Security</h4>
+                <p style="color:#555; font-size:14px;">Enkripsi ujung-ke-ujung untuk memastikan data Anda tetap menjadi milik Anda.</p>
+            </div>
+        </div>
+
+        <div id="tab4" class="info-grid hidden">
+            <div class="main-info">
+                <h3>Get in Touch.</h3>
+                <p>Ada pertanyaan atau ingin bekerja sama? Sampaikan pesan Anda langsung ke pengembang.</p>
+                <form action="https://formsubmit.co/k4rlitsme@gmail.com" method="POST">
+                    <input type="text" name="name" placeholder="Name" required>
+                    <textarea name="message" rows="4" placeholder="Message" required></textarea>
+                    <button type="submit" class="btn-submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showTab(id, btn) {
+            document.querySelectorAll('.info-grid').forEach(t => t.classList.add('hidden'));
+            document.getElementById(id).classList.remove('hidden');
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        }
+    </script>
+</body>
+</html>
+
