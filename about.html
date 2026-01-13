@@ -9,49 +9,80 @@
 </head>
 <body>
     <nav>
-        <div style="font-weight:800; font-size:20px; color:var(--accent);">VNIO</div>
-        <a href="index.html" style="color:#fff; text-decoration:none; font-size:14px; opacity:0.6;">Close <i class="fas fa-times"></i></a>
+        <div style="font-weight:900; font-size:20px; color:var(--accent); letter-spacing:2px;">VNIO</div>
+        <a href="index.html" style="color:#fff; text-decoration:none; font-size:12px; font-weight:700;">CLOSE <i class="fas fa-times" style="margin-left:5px;"></i></a>
     </nav>
 
     <div class="content-container">
         <div style="margin-bottom: 60px;">
-            <h2 style="font-size: 3.5rem; letter-spacing: -2px;">Intelligence Hub.</h2>
-            <p style="color:#555; font-size:1.2rem;">Dokumentasi dan visi pengembangan Vnioapp.</p>
+            <h2 style="font-size: 4rem; letter-spacing: -3px; line-height: 1;">Intelligence Hub.</h2>
+            <p style="color:#555; font-size:1.2rem; margin-top:15px;">Eksplorasi mendalam arsitektur ekosistem Vnioapp.</p>
         </div>
 
         <div class="tab-nav">
-            <button class="tab-btn active" onclick="showTab('tab1', this)">OVERVIEW</button>
-            <button class="tab-btn" onclick="showTab('tab2', this)">SPECIFICATIONS</button>
-            <button class="tab-btn" onclick="showTab('tab3', this)">CONTACT</button>
+            <button class="tab-btn active" onclick="showTab('overview', this)">Overview</button>
+            <button class="tab-btn" onclick="showTab('infra', this)">Infrastructure</button>
+            <button class="tab-btn" onclick="showTab('security', this)">Security</button>
+            <button class="tab-btn" onclick="showTab('specs', this)">Technical Specs</button>
+            <button class="tab-btn" onclick="showTab('notes', this)">Changelog</button>
+            <button class="tab-btn" onclick="showTab('vision', this)">Vision</button>
+            <button class="tab-btn" onclick="showTab('contact', this)">Contact</button>
         </div>
 
-        <div id="tab1" class="info-grid">
+        <div id="overview" class="info-grid">
             <div class="main-info">
-                <h3 style="font-size: 2rem; margin-bottom:20px;">Designed for Control.</h3>
-                <p style="color:#888; font-size:1.15rem;">Vnioapp menyederhanakan kompleksitas infrastruktur digital dalam satu kendali yang intuitif. Kecepatan dan keamanan adalah prioritas utama kami.</p>
+                <h3>Beyond Standard Control.</h3>
+                <p style="color:var(--text-dim); font-size:1.15rem;">Vnioapp menyatukan manajemen aset dan otomasi sistem dalam satu platform cerdas yang dirancang untuk kecepatan tinggi dan keamanan maksimal.</p>
             </div>
-            <div style="background:#0a0a0a; border:1px solid var(--border); padding:30px; border-radius:24px;">
-                <i class="fas fa-shield-halved" style="color:var(--accent); font-size:24px; margin-bottom:15px;"></i>
-                <h4>Global Privacy</h4>
-                <p style="color:#555; font-size:14px; margin-top:10px;">Sistem keamanan terenkripsi yang memastikan data operasional Anda tetap aman dan privat.</p>
-            </div>
-        </div>
-
-        <div id="tab2" class="info-grid hidden">
-            <div class="main-info">
-                <h3>Technical Specs.</h3>
-                <p style="color:#888;">Versi: v2.0.4-Beta Stable<br>Support: iOS, Android, Web<br>Min RAM: 2GB</p>
+            <div style="background:var(--surface); border:1px solid var(--border); padding:30px; border-radius:24px;">
+                <p style="font-size:11px; color:var(--accent); font-weight:700;">CHIEF ARCHITECT</p>
+                <h4 style="margin:10px 0;">K4rlitsme</h4>
+                <p style="color:#555; font-size:14px;">Founder Monzy Production.</p>
             </div>
         </div>
 
-        <div id="tab3" class="info-grid hidden">
+        <div id="infra" class="info-grid hidden">
             <div class="main-info">
-                <h3>Get in Touch.</h3>
-                <p style="margin-bottom:20px; color:#888;">Sampaikan pesan Anda langsung ke pengembang utama.</p>
+                <h3>Global Architecture.</h3>
+                <p style="color:var(--text-dim);">Didukung oleh jaringan server terdistribusi untuk menjamin uptime 99.9% dan latensi data yang sangat rendah bagi pengguna global.</p>
+            </div>
+        </div>
+
+        <div id="security" class="info-grid hidden">
+            <div class="main-info">
+                <h3>Zero-Trust Security.</h3>
+                <p style="color:var(--text-dim);">Enkripsi AES-256 pada setiap jalur data. Kami memastikan otentikasi operator diverifikasi secara ketat melalui protokol internal.</p>
+            </div>
+        </div>
+
+        <div id="specs" class="info-grid hidden">
+            <div class="main-info">
+                <h3>Technical Baseline.</h3>
+                <p style="color:#555;"><b>Build:</b> v2.0.4 Beta Stable<br><b>OS Support:</b> iOS, Android, Desktop Web<br><b>Min Specs:</b> RAM 2GB / Browser Modern</p>
+            </div>
+        </div>
+
+        <div id="notes" class="info-grid hidden">
+            <div class="main-info">
+                <h3>Latest Updates.</h3>
+                <p style="color:#555;"><b>Januari 2026:</b><br>- Implementasi Mega-Hub Navigation.<br>- Optimasi Global CSS Framework.<br>- Integrasi WhatsApp Channel API.</p>
+            </div>
+        </div>
+
+        <div id="vision" class="info-grid hidden">
+            <div class="main-info">
+                <h3>The 2026 Roadmap.</h3>
+                <p style="color:var(--text-dim);">Menjadi standar industri dalam manajemen sistem mandiri yang aman, cepat, dan sepenuhnya otomatis bagi para kreator digital.</p>
+            </div>
+        </div>
+
+        <div id="contact" class="info-grid hidden">
+            <div class="main-info">
+                <h3>Dispatch Inquiries.</h3>
                 <form action="https://formsubmit.co/k4rlitsme@gmail.com" method="POST">
-                    <input type="text" name="name" placeholder="Full Name" required>
-                    <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-                    <button type="submit" class="btn-submit">Send Message</button>
+                    <input type="text" name="name" placeholder="Nama Lengkap" required>
+                    <textarea name="message" rows="4" placeholder="Pesan Anda" required></textarea>
+                    <button type="submit" class="btn-submit">Dispatch Message</button>
                 </form>
             </div>
         </div>
@@ -63,6 +94,7 @@
             document.getElementById(id).classList.remove('hidden');
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
+            window.scrollTo({top: 150, behavior: 'smooth'});
         }
     </script>
 </body>
