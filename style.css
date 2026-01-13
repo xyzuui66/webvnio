@@ -1,4 +1,4 @@
-/* --- DESIGN SYSTEM BY MONZY PRODUCTION --- */
+/* --- VNIO ENTERPRISE DESIGN SYSTEM --- */
 :root {
     --bg: #000000;
     --surface: #0a0a0a;
@@ -8,7 +8,7 @@
     --text-dim: #888888;
     --border: rgba(255, 255, 255, 0.08);
     --glass: rgba(255, 255, 255, 0.03);
-    --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 * { box-sizing: border-box; -webkit-font-smoothing: antialiased; margin: 0; padding: 0; }
@@ -16,17 +16,19 @@
 body { 
     background: var(--bg); 
     color: var(--text-main); 
-    font-family: 'SF Pro Display', 'Inter', system-ui, sans-serif;
+    font-family: 'SF Pro Display', 'Inter', system-ui, -apple-system, sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
 }
 
+/* Background Spotlight */
 .glow-bg {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     background: radial-gradient(circle at 50% -20%, #1e293b 0%, #000 70%);
     z-index: -1; pointer-events: none;
 }
 
+/* Navigation Bar */
 nav {
     position: fixed; top: 0; width: 100%; padding: 20px 8%;
     display: flex; justify-content: space-between; align-items: center;
@@ -34,6 +36,7 @@ nav {
     border-bottom: 1px solid var(--border); z-index: 9999;
 }
 
+/* Typography & Layout */
 .container { height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; }
 
 .badge {
@@ -43,12 +46,11 @@ nav {
     text-transform: uppercase; margin-bottom: 25px;
 }
 
-h1 { font-size: 5.5rem; font-weight: 800; letter-spacing: -4px; margin: 0; line-height: 0.9; }
+h1 { font-size: 5.5rem; font-weight: 800; letter-spacing: -4px; margin: 0; line-height: 0.95; }
 h1 span { color: var(--text-dim); }
 
-.description { max-width: 650px; color: var(--text-dim); font-size: 1.25rem; margin: 35px 0; }
+.description { max-width: 700px; color: var(--text-dim); font-size: 1.25rem; margin: 35px 0; }
 .description a { color: #fff; text-decoration: none; font-weight: 600; border-bottom: 1px solid var(--accent); transition: 0.3s; }
-.description a:hover { color: var(--accent); background: rgba(56, 189, 248, 0.1); }
 
 .btn-premium {
     background: #fff; color: #000; padding: 18px 50px; border-radius: 100px;
@@ -57,19 +59,29 @@ h1 span { color: var(--text-dim); }
 }
 .btn-premium:hover { transform: translateY(-3px); background: var(--accent); box-shadow: 0 15px 35px var(--accent-glow); }
 
-/* --- ABOUT PAGE SPECIFIC --- */
-.content-container { max-width: 1100px; margin: 0 auto; padding: 120px 20px 80px; }
-.tab-nav { display: flex; gap: 30px; border-bottom: 1px solid var(--border); margin-bottom: 50px; overflow-x: auto; }
-.tab-btn { background: none; border: none; color: #555; font-size: 15px; font-weight: 600; cursor: pointer; transition: 0.3s; padding-bottom: 15px; }
+/* --- ABOUT PAGE MEGA HUB --- */
+.content-container { max-width: 1100px; margin: 0 auto; padding: 140px 20px 80px; }
+.tab-nav { 
+    display: flex; gap: 25px; border-bottom: 1px solid var(--border); 
+    margin-bottom: 50px; overflow-x: auto; padding-bottom: 5px;
+    scrollbar-width: none;
+}
+.tab-nav::-webkit-scrollbar { display: none; }
+
+.tab-btn { 
+    background: none; border: none; color: #444; font-size: 13px; 
+    font-weight: 700; cursor: pointer; transition: 0.3s; padding-bottom: 15px;
+    text-transform: uppercase; letter-spacing: 1.5px; white-space: nowrap;
+}
 .tab-btn.active { color: var(--accent); border-bottom: 2px solid var(--accent); }
-.info-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 50px; animation: revealEffect 0.5s ease; }
+
+.info-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 50px; animation: reveal 0.8s var(--transition); }
 .hidden { display: none; }
 
-@keyframes revealEffect { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes reveal { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 
-input, textarea { width: 100%; padding: 18px; background: #0a0a0a; border: 1px solid var(--border); border-radius: 12px; color: #fff; margin-bottom: 15px; }
-.btn-submit { width: 100%; padding: 18px; border-radius: 12px; border: none; background: #fff; color: #000; font-weight: 700; cursor: pointer; transition: 0.3s; }
-.btn-submit:hover { background: var(--accent); }
+input, textarea { width: 100%; padding: 18px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; color: #fff; margin-bottom: 15px; font-family: inherit; }
+.btn-submit { width: 100%; padding: 18px; border-radius: 12px; border: none; background: #fff; color: #000; font-weight: 800; cursor: pointer; transition: 0.3s; }
+.btn-submit:hover { background: var(--accent); transform: scale(1.02); }
 
-@media (max-width: 768px) { h1 { font-size: 3rem; } .info-grid { grid-template-columns: 1fr; } }
-
+@media (max-width: 768px) { h1 { font-size: 3.2rem; } .info-grid { grid-template-columns: 1fr; } }
